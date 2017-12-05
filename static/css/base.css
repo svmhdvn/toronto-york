@@ -1,0 +1,45 @@
+body {
+	background-color: #CAE7FB;
+}
+#body-container {
+	padding: 10px;
+	background-color: white;
+	width: 783px;
+	margin: 0 auto;
+}
+header .banner img {
+	display: inline-block;
+}
+header nav a.nav-link {
+	background-color: #1A4D81;
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 5px 10px;
+}
+aside#sidebar, main {
+	display: inline-block;
+	vertical-align: top;
+	height: -moz-available;
+	height: -webkit-fill-available;
+}
+aside#sidebar {
+	background-color: #92BAD5;
+	padding: 5px 10px;
+	width: 153px;
+}
+aside#sidebar a.nav-link {
+	display: block;
+	background-color: #0470A5;
+	padding: 5px 10px;
+	margin: 5px 0px;
+	color: white;
+	text-decoration: none;
+}
+main {
+	width: 600px;
+	background-color: #D3E7F2;
+}
+footer {
+	text-align: center;
+}
