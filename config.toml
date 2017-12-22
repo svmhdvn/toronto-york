@@ -1,2 +1,3 @@
 baseURL = "https://toronto-york.netlify.com/"
 title = "Toronto-York Sai Centre"
+uglyurls = true
