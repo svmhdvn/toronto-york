@@ -9,9 +9,14 @@
 	<div id="body-container">
 		<header>
 			<div class="banner">
-				<img src="/img/banner.jpg" alt="Banner">
-				<img src="/img/banner-sai.jpg" alt="Sai banner" height="162">
-			</div><br>
+				<img src="/img/banner.jpg" alt="Banner"><!--
+				--><img id="logo" src="/img/logo.png" alt="Logo"><!--
+				--><img src="/img/banner-sai.jpg" alt="Sai banner" height="162">
+				<h1 id="title">
+					The Sri Sathya Sai Baba Centre<br>
+					of Toronto-York
+				</h1>
+			</div>
 			<!-- <marquee> -->
 			<!-- 	My life is my message. ........... Love All Serve All ...... -->
 			<!-- </marquee> -->
@@ -35,7 +40,7 @@
 					{{ end }}
 				</ul>
 			</nav>
-		</header><br><br>
+		</header>
 		<div class="row">
 			<aside id="sidebar">
 				{{ range .Site.Menus.sidebar }}

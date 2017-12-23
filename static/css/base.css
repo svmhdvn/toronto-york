@@ -19,11 +19,8 @@ aside#sidebar, main {
 #body-container {
 	padding: 10px;
 	background-color: white;
-	width: 783px;
+	width: 765px;
 	margin: 0 auto;
-}
-header .banner img {
-	display: inline-block;
 }
 main {
 	width: 560px;
@@ -35,6 +32,28 @@ footer {
 }
 .row {
 	display: flex;
+}
+
+/* BANNER */
+.banner {
+	position: relative;
+}
+
+.banner #logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.banner #title {
+	position: absolute;
+	top: 0;
+	left: 230px;
+	color: blue;
+	font-size: 24px;
+	font-family: serif;
+	font-style: italic;
+	text-align: right;
 }
 
 /* SIDEBAR STUFF */
@@ -57,11 +76,14 @@ aside#sidebar a {
 
 /* HEADER NAV STUFF */
 
+nav {
+	margin: 5px 0;
+}
+
 nav ul
 {
 	list-style:none;
 	position:relative;
-	float:left;
 	margin:0;
 	padding:0;
 }
@@ -70,7 +92,6 @@ nav ul li
 {
 	min-width: 70px;
 	position:relative;
-	float:left;
 	margin:0;
 	padding:0;
 	background-color: #114983;
@@ -89,6 +110,7 @@ nav ul a
 
 nav > ul > li {
 	margin: 0 1px;
+	display: inline-block;
 }
 
 nav ul li.current-menu-item
