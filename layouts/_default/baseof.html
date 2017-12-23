@@ -44,7 +44,9 @@
 		<div class="row">
 			<aside id="sidebar">
 				{{ range .Site.Menus.sidebar }}
-					<a class="nav-link" href="{{.URL}}">{{ .Name }}</a>
+					<a class="nav-link" href="{{.URL}}">
+						{{ .Pre }}&nbsp;&nbsp;{{ .Name }}
+					</a>
 				{{ end }}
 			</aside>
 			<main class="col">
