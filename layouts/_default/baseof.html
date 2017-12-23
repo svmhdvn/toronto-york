@@ -18,58 +18,37 @@
 
 			<nav>
 				<ul>
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Menu 1</a>
-						<ul>
-							<li><a href="#">Sub Menu 1</a></li>
-							<li><a href="#">Sub Menu 2</a></li>
-							<li><a href="#">Sub Menu 3</a></li>
-							<li><a href="#">Sub Menu 4</a></li>
-							<li><a href="#">Sub Menu 5</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Menu 2</a>
-						<ul>
-							<li><a href="#">Sub Menu 1</a></li>
-							<li><a href="#">Sub Menu 2</a></li>
-							<li><a href="#">Sub Menu 3</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Menu 3</a>
-						<ul>
-							<li class="dir"><a href="#">Sub Menu 1</a></li>
-							<li class="dir"><a href="#">Sub Menu 2</a></li>
-							<li><a href="#">Sub Menu 3</a></li>
-							<li><a href="#">Sub Menu 4</a></li>
-							<li><a href="#">Sub Menu 5</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Menu 4</a></li>
-					<li><a href="#">Menu 5</a></li>
-					<li><a href="#">Menu 6</a></li>
-					<li><a href="#">Contact Us</a></li>
+					{{ $currentPage := . }}
+					{{ range .Site.Menus.navbar }}
+						<li{{if $currentPage.HasMenuCurrent "navbar" .}} class="active"{{end}}>
+							<a href="{{.URL}}">{{ .Name }}</a>
+							{{ if .HasChildren }}
+								<ul>
+									{{ range .Children }}
+										<li{{if $currentPage.HasMenuCurrent "navbar" .}} class="active"{{end}}>
+											<a href="{{.URL}}">{{ .Name }}</a>
+										</li>
+									{{ end }}
+								</ul>
+							{{ end }}
+						</li>
+					{{ end }}
 				</ul>
 			</nav>
 		</header><br><br>
-		<div class="container">
+		<div class="row">
 			<aside id="sidebar">
 				{{ range .Site.Menus.sidebar }}
 					<a class="nav-link" href="{{.URL}}">{{ .Name }}</a>
 				{{ end }}
-				<!-- <a class="nav&#45;link" href="#">Home</a> -->
-				<!-- <a class="nav&#45;link" href="#">About Us</a> -->
-				<!-- <a class="nav&#45;link" href="#">Contact Us</a> -->
-				<!-- <a class="nav&#45;link" href="#">Directions to Centre</a> -->
-				<!-- <a class="nav&#45;link" href="#">Feedback</a> -->
-				<!-- <a class="nav&#45;link" href="#">FAQ</a> -->
-				<!-- <a class="nav&#45;link" href="#">Calendar</a> -->
-				<!-- <a class="nav&#45;link" href="#">Newsletter</a> -->
-				<!-- <a class="nav&#45;link" href="#">Sai Links</a> -->
 			</aside>
-			<main>
+			<main class="col">
 				{{ block "main" . }}
 					<!-- <img src="/img/arrow.png" alt="arrow"> -->
-					<h3>&gt; {{ .Title }}</h3>
+					<h3>
+						&gt;
+						{{ template "breadcrumbtitle" .}}
+					</h3>
 					{{ .Content }}
 				{{ end }}
 			</main>
@@ -80,3 +59,12 @@
 	</div>
 </body>
 </html>
+
+{{ define "breadcrumbtitle" }}
+	{{ if .Parent }}
+		{{ if and (not .Parent.IsHome) (ne (lower (humanize .Parent.Title)) (lower .Title)) }}
+			{{ template "breadcrumbtitle" .Parent }} &gt;&gt; 
+		{{ end }}
+	{{ end }}
+	{{ .Title }}
+{{ end }}
