@@ -1,23 +1,10 @@
 +++
-title = "Contact Us"
+title = "Directions to Centre"
 [menu]
 	[menu.sidebar]
-		weight = 3
-		pre = '<img src="/img/contact-us-icon.jpg">'
+		weight = 4
+		pre = '<img src="/img/directions-to-centre-icon.jpg">'
 +++
-Telephone:
-
-<p class="indented">416-SAI-BABA (416-724-2222)</p>
-
-Postal Address:
-
-<p class="indented">
-	40 Voyager Court North<br>
-	(Etobicoke) Toronto, Ontario, Canada M9W 4Y3
-</p>
-
-email: General Information mail us at [contactus@sathyasaitoronto.org](mailto:contactus@sathyasaitoronto.org)
-
 Map:
 
 <iframe

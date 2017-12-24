@@ -17,9 +17,9 @@
 					of Toronto-York
 				</h1>
 			</div>
-			<!-- <marquee> -->
-			<!-- 	My life is my message. ........... Love All Serve All ...... -->
-			<!-- </marquee> -->
+			<marquee>
+				<b>My life is my message. ........... Love All Serve All ......</b>
+			</marquee>
 
 			<nav>
 				<ul>
@@ -48,8 +48,9 @@
 						{{ .Pre }}&nbsp;&nbsp;{{ .Name }}
 					</a>
 				{{ end }}
+				<hr>
 			</aside>
-			<main class="col">
+			<main>
 				{{ block "main" . }}
 					<!-- <img src="/img/arrow.png" alt="arrow"> -->
 					<h3>
@@ -73,5 +74,5 @@
 			{{ template "breadcrumbtitle" .Parent }} &gt;&gt; 
 		{{ end }}
 	{{ end }}
-	{{ .Title }}
+	{{ humanize .Title }}
 {{ end }}
