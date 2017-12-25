@@ -100,8 +100,6 @@ nav ul li
 {
 	min-width: 70px;
 	position:relative;
-	margin:0;
-	padding:0;
 	background-color: #114983;
 }
 
@@ -116,8 +114,11 @@ nav ul a
 	font-family: sans-serif;
 }
 
+nav > ul > li > a {
+	padding: 4px 25px 4px 5px;
+}
+
 nav > ul > li {
-	margin: 0 1px;
 	display: inline-block;
 }
 

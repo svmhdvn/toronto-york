@@ -2,3 +2,19 @@ baseURL = "https://toronto-york.netlify.com/"
 title = "Toronto-York Sai Centre"
 uglyurls = true
 pluralizelisttitles = false
+
+[[menu.navbar]]
+	name = "New Centre Inauguration"
+	parent = "Whats New"
+	weight = 2
+	url = "/img/logo.png"
+
+[[menu.navbar]]
+	name = "Events"
+	weight = 1
+
+[[menu.navbar]]
+	name = "Weekly Announcements"
+	parent = "Events"
+	weight = 1
+	url = "/img/logo.png"
